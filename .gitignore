@@ -1,0 +1,64 @@
+# Node.js dependencies
+node_modules/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Logs and debugging files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+*.log.*
+*.log-*
+*.log/*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*.swm
+*.bak
+*.backup
+*.vspscc
+*.vssscc
+._*
+*~
+*.sublime-workspace
+Thumbs.db
+.DS_Store
+
+# Compiled files
+build/
+out/
+dist/
+*.min.js
+*.min.css
+
+# Cache and temporary files
+.cache/
+.tmp/
+.temp/
+.tmp/
+.temp/
+temp/
+TMP/
+temp*
+
+# Miscellaneous
+.env
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

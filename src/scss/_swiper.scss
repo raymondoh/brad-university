@@ -1,0 +1,92 @@
+/* main.scss or your custom CSS file */
+@import "https://unpkg.com/swiper/swiper-bundle.min.css";
+
+.swiper-container {
+  width: 100%;
+  height: 60vh; /* Adjust height as needed */
+  position: relative; /* Ensure relative positioning for absolute elements inside */
+}
+
+.swiper-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-slider__slide {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #fff;
+  text-align: left;
+}
+
+.slide-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.slide-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background 0.3s;
+}
+
+.slide-button:hover {
+  background: #0056b3;
+}
+
+/* Center the navigation buttons */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-prev {
+  left: 10px; /* Adjust as needed */
+}
+
+.carousel-next {
+  right: 10px; /* Adjust as needed */
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}

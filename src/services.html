@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="antialiased selection:bg-sky-300 selection:text-white bg-white">
+    <header class="sticky z-50 top-0 bg-gray-800 text-white md:pr-14 md:pt-5 md:pb-6">
+      <div class="flex justify-between items-center">
+        <!-- Logo and Desktop Navigation -->
+        <div class="flex items-end">
+          <div class="p-4">
+            <span class="text-lg font-semibold">
+              <a href="/">
+                <img src="./images/logo-1.svg" alt="logo" class="text-white h-10 md:w-32">
+              </a>
+            </span>
+          </div>
+  
+          <!-- Desktop Navigation -->
+          <nav id="desktop-nav" class="hidden md:flex flex-col justify-center" aria-label="Desktop navigation">
+            <div class="text-sm mb-1 p-4">
+              Slogan goes here
+            </div>
+            <ul class="flex uppercase">
+              <li><a href="/" class="p-4 text-white hover:text-green-500" data-route="home">Home</a></li>
+            
+              <!-- services -->
+              <li class="relative group">
+                <a href="services.html" class="p-4 text-white hover:text-green-500" aria-haspopup="true" aria-expanded="false">Services
+                  <svg class="inline h-4 w-4 ml-2 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.293 9.293a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"></path>
+                  </svg>
+                </a>
+                <ul class="absolute left-0 hidden mt-2 space-y-2 bg-pink-500 group-hover:block" role="menu">
+                  <li><a href="service-1.html" class="block p-2 text-white hover:text-green-500 transition-colors duration-100 ease-in-out" tabindex="0" role="menuitem">Sub link 1</a></li>
+                  <li><a href="service-1.html" class="block p-2 text-white hover:text-green-500 transition-colors duration-100 ease-in-out" tabindex="0" role="menuitem">Sub link 2</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html" class="p-4 text-white hover:text-green-500" data-route="about">About</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+  
+        <!-- Container for mobile navigation toggle -->
+        <div id="mobile-nav-container" class="flex items-center relative mr-5">
+          <button id="menu-toggle" class="p-4 md:hidden absolute right-0 top-1/2 transform -translate-y-1/2">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+  
+          <!-- Desktop Call to Action -->
+          <button class="hidden p-4 h-16 w-44 bg-teal-500 rounded md:block self-auto">
+            Call to Action
+          </button>
+      </div>
+      </div>
+        <!-- Mobile Navigation Links -->
+        <nav id="mobile-nav" class="md:hidden z-20" aria-label="Mobile navigation">
+          <ul id="menu" class="hidden space-y-4 h-screen bg-gray-800">
+            <li><a href="/" class="block p-4 hover:text-red-500" data-route="home">Home</a></li>
+          
+            <!-- services -->
+            <li class="relative group">
+              <a href="services.html" class="block p-4" aria-haspopup="true" aria-expanded="false" tabindex="0">Services
+                <span class="submenu-toggle" tabindex="0">
+                  <!-- Arrow Down SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-down  inline h-6 w-6 tex-red-500 bg-green-400"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                  <!-- Arrow Up SVG (hidden initially) -->
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arrow-up inline h-8 w-8 tex-red-500 bg-green-400 submenu-hidden"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+              </span>
+              </a>
+              <ul class="submenu submenu-hidden left-0 mt-2 space-y-2 bg-pink-500 group-hover:block">
+                <li><a href="service-1.html" class="block p-2 hover:text-red-500">Sub link 1</a></li>
+                <li><a href="#" class="block p-2 hover:text-red-500">Sub link 2</a></li>
+              </ul>
+            </li>
+            <li><a href="about.html" class="block p-4 hover:text-red-500" data-route="about">About</a></li>
+            <li><a href="contact.html" class="block p-4 hover:text-red-500" data-route="about">Contact</a></li>
+          </ul>
+        </nav> 
+    </header>
+      
+
+      <!-- MAIN -->
+      <div>
+        <h1 class="text-4xl text-red font-bold">Services Page</h1>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde ut eaque aspernatur nobis, eligendi modi quasi, molestiae mollitia reiciendis, corrupti ipsum possimus reprehenderit rem nemo repellat repudiandae. Illum qui quasi saepe alias. Voluptatem magni reprehenderit soluta totam provident ipsum culpa officiis libero nobis. Eius debitis, ipsum quidem nemo minima culpa ex voluptatum porro, quasi voluptates ipsa ut laudantium soluta possimus esse officia dolore incidunt adipisci, a repudiandae nobis deserunt perferendis reprehenderit est? Aliquid repellat placeat praesentium, tempore est minima minus dolore sint corrupti at beatae dolorem error fugit nam voluptas ratione mollitia atque quod, vel consequatur molestiae quibusdam. Aut, pariatur? Similique maiores commodi aspernatur ex molestiae. Illo illum amet obcaecati veritatis, dicta ea. Quo reiciendis earum pariatur, dolores vitae architecto perspiciatis totam quas voluptatem, voluptates est placeat! Nulla dolorum omnis ipsam corporis fugit. Voluptatem quo sint at iste eius quos ipsa! Id nesciunt facilis voluptate! Atque neque asperiores adipisci alias cum quisquam repellat? Quis veniam voluptatem veritatis quas corrupti laudantium reiciendis deserunt eos quaerat sequi suscipit, accusamus praesentium incidunt placeat perspiciatis quam cum labore in quae enim est, iure nihil cumque alias! Pariatur, illum similique fugit laborum, sunt quo ad nemo perspiciatis error repellat numquam temporibus magnam, quam officiis doloremque laudantium debitis totam doloribus molestias. Vel reiciendis eos repellat laboriosam dolor. Reiciendis, quia atque. Molestiae dolor rem non vero iusto consequuntur deserunt culpa? A quae cumque optio accusantium mollitia vitae quidem, vel rem laudantium corporis voluptatibus soluta atque, magni earum libero quos sit reprehenderit, facere illum id! Iusto similique ducimus quaerat ab fugit laborum mollitia! Optio fugiat aspernatur assumenda, quis ut hic beatae natus doloribus alias quo consequuntur voluptatum maiores labore! Ut quis placeat consequatur voluptatum repudiandae iusto quasi iure deserunt tenetur! Deleniti accusantium ab velit, facere praesentium delectus quia officia neque. Eligendi accusantium mollitia, ex voluptatibus autem itaque eos.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem quaerat nemo laudantium quasi, reprehenderit voluptate officiis temporibus vero cumque et consectetur inventore officia deserunt! Commodi qui quisquam natus eos asperiores nihil nam, veritatis, fugiat consectetur corporis sed dolores at perferendis, facilis explicabo distinctio in quasi rerum aliquid voluptates culpa optio veniam! Illo amet reprehenderit aut iusto id repudiandae provident 
+      </div>
+
+
+        <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white relative">
+      <div class="container mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:pt-20">
+        <!-- Grid -->
+        <div class="grid grid-cols-2 space-y-6 md:grid-cols-4 lg:grid-cols-5 md:space-y-0">
+              <!-- Brand -->
+          <div class="col-span-full lg:col-span-1">
+            <a class="brand flex space-x-3 text-xl font-semibold text-white" href="/" aria-label="Brand">
+              <img src="./images/logo-1.svg" alt="Shield Solicitors logo" class="brand-logo h-8 w-8" />
+              <span class="brand-name">Company Name</span>
+            </a>
+          </div>
+          <!-- Column 1 -->
+          <nav class="col-span-1" aria-label="Product Menu">
+            <h4 class="menu-title font-semibold text-gray-100">Product</h4>
+            <ul class="menu-list mt-3 space-y-3">
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Pricing</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Changelog</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Docs</a></li>
+            </ul>
+          </nav>
+           <!-- Column 2 -->
+          <nav class="col-span-1" aria-label="Product Menu">
+            <h4 class="menu-title font-semibold text-gray-100">Product</h4>
+            <ul class="menu-list mt-3 space-y-3">
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Pricing</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Changelog</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Docs</a></li>
+            </ul>
+          </nav>
+             <!-- Column 3 -->
+          <nav class="col-span-1" aria-label="Product Menu">
+            <h4 class="menu-title font-semibold text-gray-100">Product</h4>
+            <ul class="menu-list mt-3 space-y-3">
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Pricing</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Changelog</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Docs</a></li>
+            </ul>
+          </nav>
+             <!-- Column 4 -->
+          <nav class="col-span-1" aria-label="Company Menu">
+            <h4 class="menu-title font-semibold text-gray-100">Company</h4>
+            <ul class="menu-list mt-3 space-y-3">
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">About us</a></li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Blog</a></li>
+              <li>
+                <a class="menu-link text-gray-400 hover:text-gray-200" href="#">Careers</a>
+                <span class="hiring-badge ml-1 inline rounded-md bg-teal-700 px-2 py-1 text-xs text-white">We're hiring</span>
+              </li>
+              <li><a class="menu-link text-gray-400 hover:text-gray-200" href="#">Customers</a></li>
+            </ul>
+          </nav>
+          <!-- Newsletter -->
+          <div class="col-span-2  newsletter">
+            <h4 class="newsletter-title font-semibold text-gray-100">Stay up to date</h4>
+            <form class="newsletter-form">
+              <div class="input-wrapper mt-4 flex flex-col items-center gap-2 rounded-md bg-white p-2 sm:flex-row sm:gap-3">
+                <input type="email" id="email-input" name="email" class="input-field block w-full rounded-md border-transparent px-4 py-3 shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Enter your email" aria-label="Enter your email to subscribe">
+                <button class="subscribe-button inline-flex w-full items-center justify-center gap-x-3 whitespace-nowrap rounded-md border border-transparent bg-teal-600 px-4 py-3 text-center font-medium text-white transition hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto" type="submit" aria-label="Subscribe">
+                  Subscribe
+                </button>
+              </div>
+              <p class="newsletter-description mt-3 text-sm text-gray-400">
+                New UI kits or big discounts. Never spam.
+              </p>
+            </form>
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- End Grid -->
+    <!-- Social icons section remains the same -->
+    <!-- ... -->
+    <div
+    class="mt-5 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
+  >
+    <div class="flex items-center justify-between">
+      <p class="text-sm text-white">
+        © 2022 Company name. All rights reserved.
+      </p>
+    </div>
+    <!-- End Col -->
+
+    <!-- Social Brands -->
+    <div>
+      <a
+        class="inline-flex h-10 w-10 items-center justify-center gap-x-3.5 rounded-md text-center text-gray-200 transition hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900"
+        href="#"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+          />
+        </svg>
+      </a>
+      <a
+        class="inline-flex h-10 w-10 items-center justify-center gap-x-3.5 rounded-md text-center text-gray-200 transition hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900"
+        href="#"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+          />
+        </svg>
+      </a>
+      <a
+        class="inline-flex h-10 w-10 items-center justify-center gap-x-3.5 rounded-md text-center text-gray-200 transition hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900"
+        href="#"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+          />
+        </svg>
+      </a>
+      <a
+        class="inline-flex h-10 w-10 items-center justify-center gap-x-3.5 rounded-md text-center text-gray-200 transition hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900"
+        href="#"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          />
+        </svg>
+      </a>
+      <a
+        class="inline-flex h-10 w-10 items-center justify-center gap-x-3.5 rounded-md text-center text-gray-200 transition hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900"
+        href="#"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"
+          />
+        </svg>
+      </a>
+    </div>
+    <!-- End Social Brands -->
+      </div>
+      <!-- End Container -->
+      <!-- svg -->
+      <!-- <div class="absolute -bottom-10 -right-20 opacity-10 scale-90">
+        <img src="./images/logo-1.svg" alt="Background Logo" class="h-[200px] w-[200px]"/>
+      </div> -->
+    </footer>
+
+
+      <!-- SCROLL-TO-TOP BTN -->
+     <button
+    id="scrollToTop"
+    class="fixed bottom-10 right-10 z-20 hidden rounded-full bg-teal-500 p-4 text-white opacity-90"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="h-6 w-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+      />
+    </svg>
+  </button> 
+  </body>
+</html>
