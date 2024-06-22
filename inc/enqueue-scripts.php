@@ -1,6 +1,6 @@
 <?php
 // Enqueue scripts and styles
-function university_enqueue_assets() {
+function brad_theme_enqueue_assets() {
     // Enqueue Font Awesome CSS from CDN
     wp_enqueue_style(
         'font-awesome',
@@ -55,4 +55,4 @@ function university_enqueue_assets() {
         true // Load in footer
     );
 }
-add_action('wp_enqueue_scripts', 'university_enqueue_assets');
+add_action('wp_enqueue_scripts', 'brad_theme_enqueue_assets');

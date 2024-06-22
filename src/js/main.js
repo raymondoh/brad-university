@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSwiper(".hero-swiper", {
       direction: "horizontal",
       loop: true,
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 30,
       autoplay: {
         delay: 5000,
