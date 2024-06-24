@@ -60,8 +60,8 @@
                 <nav>
                     <ul class="min-list social-icons-list group">
                         <li>
-                            <a href="https://www.facebook.com" target="_blank" class="social-color-linkedin"><i
-                                    class="fab fa-facebook"></i>
+                            <a href="https://www.facebook.com" target="_blank" class=""><i
+                                    class="fab fa-facebook text-green-500"></i>
                                 Facebook</a>
                         </li>
                         <li>
@@ -85,6 +85,8 @@
         </div>
     </div>
 </footer>
+
+
 
 <?php wp_footer(); ?>
 </body>

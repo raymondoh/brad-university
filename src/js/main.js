@@ -2,8 +2,15 @@
 // Import your main SCSS file
 import "../scss/main.scss";
 import setupSwiper from "./setupSwiper";
+import MobileMenu from "./MobileMenu";
+import Search from "./Search";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu
+  const mobileMenu = new MobileMenu();
+  // Search
+  const search = new Search();
+
   // Hero swiper
   if (document.querySelector(".hero-swiper") !== null) {
     setupSwiper(".hero-swiper", {

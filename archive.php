@@ -1,17 +1,16 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages (such as category, tag, author, or date archives)
  *
  * @package WordPress
  * @subpackage Your_Theme_Name
  * @since Your_Theme_Version
  */
 
-get_header(); ?>
+get_header(); // Includes the header.php template file
+// Debugging code
+echo '<!-- archive.php is being used -->';
+?>
 
 <!-- Your custom code goes here  -->
 <!-- <div class="page-banner">
@@ -20,16 +19,19 @@ get_header(); ?>
     </div>
 
     <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title">Welcome to our blog</h1>
+        <h1 class="page-banner__title">
+            <?php //the_archive_title(); ?>
+        </h1>
+
         <div class="page-banner__intro">
-            <p>Keep up with out latest news</p>
+            <p><?php //the_archive_description(); ?></p>
         </div>
     </div>
 </div> -->
 <!-- page banner here -->
 <?php pageBanner(array(
-        'title' => 'Welcome to our blog',
-        'subtitle' => 'Keep up with out latest news'
+        'title' => get_the_archive_title(),
+        'subtitle' => get_the_archive_description()
     )); ?>
 <!-- content -->
 <div class="container container--narrow page-section">
@@ -46,7 +48,7 @@ get_header(); ?>
         </div>
         <div class="generic-content">
             <?php the_excerpt(); ?>
-            <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo;</a></p>
+            <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue readings &raquo;</a></p>
         </div>
     </div>
 
@@ -55,6 +57,4 @@ get_header(); ?>
     <?php echo paginate_links(); ?>
 </div>
 
-
-
-<?php get_footer(); ?>
+<?php get_footer(); // Includes the footer.php template file ?>

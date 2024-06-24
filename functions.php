@@ -15,3 +15,7 @@
 // Your custom functions go here
 require_once get_template_directory() . '/inc/enqueue-scripts.php';
 require_once get_template_directory() . '/inc/theme-setup.php';
+require_once get_template_directory() . '/inc/adjust-custom-query.php';
+require_once get_template_directory() . '/inc/debug-page-ids.php';
+require_once get_template_directory() . '/inc/page-banner.php';
+require_once get_template_directory() . '/inc/custom-rest.php';

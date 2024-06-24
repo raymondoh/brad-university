@@ -27,6 +27,14 @@ function brad_theme_enqueue_assets() {
         '1.0.0',
         'all'
     );
+     // Enqueue jQuery from CDN
+     wp_enqueue_script(
+        'jquery-cdn',
+        'https://code.jquery.com/jquery-3.6.0.min.js',
+        array(),
+        null,
+        true // Load in footer
+    );
 
     // Enqueue Alpine.js from CDN
     wp_enqueue_script(
@@ -48,11 +56,18 @@ function brad_theme_enqueue_assets() {
 
     // Enqueue main.js with Alpine.js and Swiper.js as dependencies
     wp_enqueue_script(
-        'university-js',
+        'brad-js',
         get_template_directory_uri() . '/dist/js/main.js',
-        array('alpine-js', 'swiper-js'),
+        array('jquery','alpine-js', 'swiper-js'),
         '1.0.0',
         true // Load in footer
     );
+    // Localize script
+    wp_localize_script( 'brad-js', 'bradData', array(
+        'root_url' => get_site_url(),
+    ) );
+    
+
+
 }
 add_action('wp_enqueue_scripts', 'brad_theme_enqueue_assets');
