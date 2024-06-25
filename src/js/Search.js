@@ -52,33 +52,86 @@ class Search {
 
     this.previousValue = this.searchField.value;
   }
+  // ORIGINAL getResults() method
+  // getResults() {
+  //   const postsUrl = `${bradData.root_url}/wp-json/wp/v2/posts?search=${this.searchField.value}`;
+  //   const pagesUrl = `${bradData.root_url}/wp-json/wp/v2/pages?search=${this.searchField.value}`;
+  //   const eventsUrl = `${bradData.root_url}/wp-json/wp/v2/event?search=${this.searchField.value}`; // URL for "event" CPT
+  //   const professorsUrl = `${bradData.root_url}/wp-json/wp/v2/professor?search=${this.searchField.value}`; // URL for "professor" CPT
+  //   const programsUrl = `${bradData.root_url}/wp-json/wp/v2/program?search=${this.searchField.value}`; // URL for "program" CPT
 
+  //   Promise.all([
+  //     fetch(postsUrl).then((response) => response.json()),
+  //     fetch(pagesUrl).then((response) => response.json()),
+  //     fetch(eventsUrl).then((response) => response.json()), // Fetch the events data
+  //     fetch(professorsUrl).then((response) => response.json()), // Fetch the professors data
+  //     fetch(programsUrl).then((response) => response.json()), // Fetch the programs data
+  //   ])
+  //     .then(([posts, pages, events, professors, programs]) => {
+  //       const combinedResults = posts.concat(
+  //         pages,
+  //         events,
+  //         professors,
+  //         programs,
+  //       ); // Combine the results from all three fetches
+  //       this.resultsDiv.innerHTML = `
+  //         <h2 class="search-overlay__section-title">General Information</h2>
+  //         ${combinedResults.length ? '<ul class="link-list min-list">' : "<p>No general information matches that search.</p>"}
+  //           ${combinedResults.map((item) => `<li><a href="${item.link}">${item.title.rendered}</a> ${item.type === "post" ? `by ${item.author_name}` : ""}</li>`).join("")}
+  //         ${combinedResults.length ? "</ul>" : ""}
+  //       `;
+  //       this.isSpinnerVisible = false;
+  //     })
+  //     .catch(() => {
+  //       this.resultsDiv.innerHTML =
+  //         "<p>Unexpected error; please try again.</p>";
+  //     });
+  // }
+
+  // NEW getResults() method with custom REST API endpoint and highlighting
   getResults() {
-    const postsUrl = `${bradData.root_url}/wp-json/wp/v2/posts?search=${this.searchField.value}`;
-    const pagesUrl = `${bradData.root_url}/wp-json/wp/v2/pages?search=${this.searchField.value}`;
-    const eventsUrl = `${bradData.root_url}/wp-json/wp/v2/event?search=${this.searchField.value}`; // URL for "event" CPT
-    const professorsUrl = `${bradData.root_url}/wp-json/wp/v2/professor?search=${this.searchField.value}`; // URL for "professor" CPT
-    const programsUrl = `${bradData.root_url}/wp-json/wp/v2/program?search=${this.searchField.value}`; // URL for "program" CPT
+    const searchTerm = this.searchField.value;
+    const searchUrl = `${bradData.root_url}/wp-json/brad/v1/search?term=${searchTerm}`;
 
-    Promise.all([
-      fetch(postsUrl).then((response) => response.json()),
-      fetch(pagesUrl).then((response) => response.json()),
-      fetch(eventsUrl).then((response) => response.json()), // Fetch the events data
-      fetch(professorsUrl).then((response) => response.json()), // Fetch the professors data
-      fetch(programsUrl).then((response) => response.json()), // Fetch the programs data
-    ])
-      .then(([posts, pages, events, professors, programs]) => {
-        const combinedResults = posts.concat(
-          pages,
-          events,
-          professors,
-          programs,
-        ); // Combine the results from all three fetches
+    // Function to highlight search term
+    const highlight = (text, term) => {
+      const regex = new RegExp(`(${term})`, "gi");
+      return text.replace(regex, "<mark>$1</mark>");
+    };
+
+    fetch(searchUrl)
+      .then((response) => response.json())
+      .then((results) => {
         this.resultsDiv.innerHTML = `
           <h2 class="search-overlay__section-title">General Information</h2>
-          ${combinedResults.length ? '<ul class="link-list min-list">' : "<p>No general information matches that search.</p>"}
-            ${combinedResults.map((item) => `<li><a href="${item.link}">${item.title.rendered}</a> ${item.type === "post" ? `by ${item.author_name}` : ""}</li>`).join("")}
-          ${combinedResults.length ? "</ul>" : ""}
+          ${results.generalInfo.length ? '<ul class="link-list min-list">' : "<p>No general information matches that search.</p>"}
+            ${results.generalInfo.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.generalInfo.length ? "</ul>" : ""}
+  
+          <h2 class="search-overlay__section-title">Professors</h2>
+          ${results.professors.length ? '<ul class="link-list min-list">' : "<p>No professors match that search.</p>"}
+            ${results.professors.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.professors.length ? "</ul>" : ""}
+  
+          <h2 class="search-overlay__section-title">Programs</h2>
+          ${results.programs.length ? '<ul class="link-list min-list">' : "<p>No programs match that search.</p>"}
+            ${results.programs.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.programs.length ? "</ul>" : ""}
+  
+          <h2 class="search-overlay__section-title">Events</h2>
+          ${results.events.length ? '<ul class="link-list min-list">' : "<p>No events match that search.</p>"}
+            ${results.events.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.events.length ? "</ul>" : ""}
+  
+          <h2 class="search-overlay__section-title">Campuses</h2>
+          ${results.campuses.length ? '<ul class="link-list min-list">' : "<p>No campuses match that search.</p>"}
+            ${results.campuses.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.campuses.length ? "</ul>" : ""}
+  
+          <h2 class="search-overlay__section-title">Related Programs</h2>
+          ${results.relatedPrograms.length ? '<ul class="link-list min-list">' : "<p>No related programs found.</p>"}
+            ${results.relatedPrograms.map((item) => `<li><a href="${item.permalink}">${highlight(item.title, searchTerm)}</a></li>`).join("")}
+          ${results.relatedPrograms.length ? "</ul>" : ""}
         `;
         this.isSpinnerVisible = false;
       })

@@ -19,3 +19,7 @@ require_once get_template_directory() . '/inc/adjust-custom-query.php';
 require_once get_template_directory() . '/inc/debug-page-ids.php';
 require_once get_template_directory() . '/inc/page-banner.php';
 require_once get_template_directory() . '/inc/custom-rest.php';
+require_once get_template_directory() . '/inc/custom-search-route.php';
+require_once get_template_directory() . '/inc/redirect-subscribers.php';
+require_once get_template_directory() . '/inc/custom-login-screen.php';
+require_once get_template_directory() . '/inc/enqueue-login-css.php';

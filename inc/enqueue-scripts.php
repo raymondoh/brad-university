@@ -21,7 +21,7 @@ function brad_theme_enqueue_assets() {
 
     // Enqueue your theme's main CSS
     wp_enqueue_style(
-        'university-css',
+        'brad-css',
         get_template_directory_uri() . '/dist/css/main.css',
         array(),
         '1.0.0',

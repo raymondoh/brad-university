@@ -1,13 +1,17 @@
+/* Google Fonts Import */
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Jersey+25&display=swap");
 
+/* Tailwind CSS Imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Base Styles */
 @import "base/variables.scss";
 @import "base/_baseline.scss";
 @import "base/_utility-classes.scss";
 
+/* Layout Components */
 @import "_header.scss";
 @import "_main-navigation.scss";
 @import "_page-banner.scss";
@@ -21,16 +25,19 @@
 @import "_link-list.scss";
 @import "_professor-card.scss";
 @import "_search-overlay.scss";
-
+@import "_my-notes.scss";
 @import "_full-width-split.scss";
-//@import "_hero-slider.scss";
 @import "_swiper.scss";
 @import "_footer.scss";
 
-@import "_shame.scss";
-@import "_login.scss";
+/* Utility Components */
 @import "_btn.scss";
 
+/* Special Cases and Overrides */
+@import "_shame.scss";
+@import "_login.scss";
+
+/* Custom Layer Styles */
 @layer base {
   html {
     font-family: "Quicksand", sans-serif;
@@ -52,6 +59,7 @@
     //@apply text-red-500; // Ensure text color is defined if not using Tailwind apply.
   }
 }
+
 @layer components {
   // Add your component styles here
 }

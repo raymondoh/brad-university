@@ -46,7 +46,7 @@ echo '<!-- single-program.php is being used -->';
 
         <!-- The content of the page -->
         <div class="generic-content">
-            <?php the_content(); ?>
+            <?php the_field('main_body_content'); ?>
         </div>
         <!--  -->
         <!-- Related Professors -->
